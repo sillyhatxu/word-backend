@@ -18,6 +18,14 @@
   revision = "ec5e00d3c878b2a97bbe0884ef45ffd1b4f669f5"
 
 [[projects]]
+  digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
+  name = "github.com/davecgh/go-spew"
+  packages = ["spew"]
+  pruneopts = "UT"
+  revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
+  version = "v1.1.1"
+
+[[projects]]
   digest = "1:ec6f9bf5e274c833c911923c9193867f3f18788c461f76f05f62bb1510e0ae65"
   name = "github.com/go-sql-driver/mysql"
   packages = ["."]
@@ -139,6 +147,14 @@
   version = "v0.8.1"
 
 [[projects]]
+  digest = "1:0028cb19b2e4c3112225cd871870f2d9cf49b9b4276531f03438a88e94be86fe"
+  name = "github.com/pmezard/go-difflib"
+  packages = ["difflib"]
+  pruneopts = "UT"
+  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
+  version = "v1.0.0"
+
+[[projects]]
   digest = "1:1a23fdd843129ef761ffe7651bc5fe7c5b09fbe933e92783ab06cc11c37b7b37"
   name = "github.com/rifflock/lfshook"
   packages = ["."]
@@ -178,12 +194,12 @@
   version = "v3.0.2"
 
 [[projects]]
-  digest = "1:7a8299112db25d3edb674a5bfe16f4705764497e120d8fdac0eb648506ea24b8"
+  digest = "1:bee9d59b5c8e9fe0814c9f1674a22c8cdb5ae0313d6e0ba2e70f2d64bc6de666"
   name = "github.com/sillyhatxu/mysql-client"
   packages = ["."]
   pruneopts = "UT"
-  revision = "0e021e6238ad51c3bfb054d1098624201d4b3147"
-  version = "v1.0.5"
+  revision = "7bb4099b1bddf621b18c10e023a73cc1441c2160"
+  version = "v1.0.7"
 
 [[projects]]
   digest = "1:76e0be37969db3c796e3fac2739bc15c0618c6a33ec1670e878eb35fcd79677a"
@@ -200,6 +216,14 @@
   pruneopts = "UT"
   revision = "839c75faf7f98a33d445d181f3018b5c3409a45e"
   version = "v1.4.2"
+
+[[projects]]
+  digest = "1:8548c309c65a85933a625be5e7d52b6ac927ca30c56869fae58123b8a77a75e1"
+  name = "github.com/stretchr/testify"
+  packages = ["assert"]
+  pruneopts = "UT"
+  revision = "221dbe5ed46703ee255b1da0dec05086f5035f62"
+  version = "v1.4.0"
 
 [[projects]]
   branch = "master"
@@ -309,6 +333,14 @@
   revision = "f6d0f9ee430895e87ef1ceb5ac8f39725bafceef"
   version = "v1.24.0"
 
+[[projects]]
+  digest = "1:59f10c1537d2199d9115d946927fe31165959a95190849c82ff11e05803528b0"
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f221b8435cfb71e54062f6c6e99e9ade30b124d5"
+  version = "v2.2.4"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
@@ -317,6 +349,7 @@
     "github.com/golang/protobuf/proto",
     "github.com/golang/protobuf/ptypes",
     "github.com/golang/protobuf/ptypes/timestamp",
+    "github.com/mitchellh/mapstructure",
     "github.com/sillyhatxu/consul-client",
     "github.com/sillyhatxu/environment-config",
     "github.com/sillyhatxu/logrus-client",
@@ -324,6 +357,7 @@
     "github.com/sillyhatxu/logrus-client/logstashhook",
     "github.com/sillyhatxu/mysql-client",
     "github.com/sirupsen/logrus",
+    "github.com/stretchr/testify/assert",
     "google.golang.org/grpc",
     "google.golang.org/grpc/codes",
     "google.golang.org/grpc/health",

@@ -20,7 +20,7 @@ func GetById(request *longman.GetByIdRequest) (*longman.Word, error) {
 	return nil, nil
 }
 
-func GetByWord(request *longman.GetByWordRequest) (*longman.Word, error) {
+func GetByVocabularyId(request *longman.GetByVocabularyIdRequest) (*longman.Word, error) {
 	return nil, nil
 }
 

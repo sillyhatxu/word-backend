@@ -65,7 +65,7 @@ func (c Client) GetLongmanWordById(req *longman.GetByIdRequest) (*longman.WordRe
 	return client.GetById(ctx, req)
 }
 
-func (c Client) GetLongmanWordByWord(req *longman.GetByWordRequest) (*longman.WordResponse, error) {
+func (c Client) GetLongmanWordByWord(req *longman.GetByVocabularyIdRequest) (*longman.WordResponse, error) {
 	conn, err := grpc.Dial(c.address, grpc.WithInsecure())
 	if err != nil {
 		return nil, err
@@ -74,7 +74,7 @@ func (c Client) GetLongmanWordByWord(req *longman.GetByWordRequest) (*longman.Wo
 	client := longman.NewLongmanServiceClient(conn)
 	ctx, cancel := context.WithTimeout(context.Background(), c.config.timeout)
 	defer cancel()
-	return client.GetByWord(ctx, req)
+	return client.GetByVocabularyId(ctx, req)
 }
 
 func (c Client) LongmanWordList(req *longman.ListRequest) (*longman.WordListResponse, error) {
@@ -88,7 +88,6 @@ func (c Client) LongmanWordList(req *longman.ListRequest) (*longman.WordListResp
 	defer cancel()
 	return client.List(ctx, req)
 }
-
 
 func (c Client) WordList(req *word.ListRequest) (*word.WordListResponse, error) {
 	conn, err := grpc.Dial(c.address, grpc.WithInsecure())

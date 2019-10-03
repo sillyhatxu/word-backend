@@ -3,8 +3,10 @@ package dao
 import (
 	"bufio"
 	"fmt"
+	"github.com/sillyhatxu/word-backend/dao/params"
 	"github.com/sillyhatxu/word-backend/model"
 	"github.com/sirupsen/logrus"
+	"github.com/stretchr/testify/assert"
 	"log"
 	"os"
 	"testing"
@@ -60,5 +62,14 @@ func TestBatchAddVocabularyRule(t *testing.T) {
 		if err != nil {
 			panic(err)
 		}
+	}
+}
+
+func TestFindVocabularyList(t *testing.T) {
+	p := params.VocabularyListParams{Offset: 0, Limit: 10}
+	array, err := FindVocabularyList(p)
+	assert.Nil(t, err)
+	for _, v := range array {
+		logrus.Infof("created time : %v;%#v", v.CreatedTime.Format("2006-01-02T15:04:05"), v)
 	}
 }

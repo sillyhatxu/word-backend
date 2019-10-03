@@ -29,7 +29,7 @@ select * from longman_word limit ?,?
 
 func FindLongmanList(p params.LongmanWordListParams) ([]*model.Longman, error) {
 	var res []*model.Longman
-	err := client.FindFirst(findVocabularyListSQL, &res, p.Offset, p.Limit)
+	err := client.FindFirst(findLongmanListSQL, &res, p.Offset, p.Limit)
 	return res, err
 }
 

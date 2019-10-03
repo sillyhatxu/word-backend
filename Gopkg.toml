@@ -47,7 +47,7 @@
 
 [[constraint]]
   name = "github.com/sillyhatxu/mysql-client"
-  version = "1.0.5"
+  version = "1.0.7"
 
 [[constraint]]
   name = "github.com/sirupsen/logrus"

@@ -11,7 +11,7 @@ const (
 )
 
 func init() {
-	err := Initial(fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", UserName, Password, Host, Port, Schema), "")
+	err := Initial(fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", UserName, Password, Host, Port, Schema)+"?loc=Asia%2FSingapore&parseTime=true", "")
 	//err := Initial(fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?loc=Asia/Singapore", UserName, Password, Host, Port, Schema))
 	//err := Initial(fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?loc=Asia%2FSingapore", UserName, Password, Host, Port, Schema))
 	if err != nil {

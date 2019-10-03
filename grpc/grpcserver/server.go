@@ -70,8 +70,8 @@ func (l Longman) GetById(ctx context.Context, request *longman.GetByIdRequest) (
 	}, nil
 }
 
-func (l Longman) GetByWord(ctx context.Context, request *longman.GetByWordRequest) (*longman.WordResponse, error) {
-	res, err := longmanservice.GetByWord(request)
+func (l Longman) GetByVocabularyId(ctx context.Context, request *longman.GetByVocabularyIdRequest) (*longman.WordResponse, error) {
+	res, err := longmanservice.GetByVocabularyId(request)
 	if err != nil {
 		logrus.Errorf("longmanservice.GetByWord(%#v) response error. %#v", request, err)
 		return nil, err

@@ -11,14 +11,14 @@ service LongmanService {
     }
     rpc GetById (GetByIdRequest) returns (WordResponse) {
     }
-    rpc GetByWord (GetByWordRequest) returns (WordResponse) {
+    rpc GetByVocabularyId (GetByVocabularyIdRequest) returns (WordResponse) {
     }
     rpc List (ListRequest) returns (WordListResponse) {
     }
 }
 
 message AddRequest {
-    string word = 1;
+    int64 vocabularyId = 1;
     string description = 2;
 }
 
@@ -32,8 +32,8 @@ message GetByIdRequest {
     int64 id = 1;
 }
 
-message GetByWordRequest {
-    string word = 1;
+message GetByVocabularyIdRequest {
+    int64 vocabularyId = 1;
 }
 
 message ListRequest {
