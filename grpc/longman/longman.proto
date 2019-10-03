@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package longman;
+
+import "google/protobuf/timestamp.proto";
+
+service LongmanService {
+    rpc Add (AddRequest) returns (Response) {
+    }
+    rpc Update (UpdateRequest) returns (Response) {
+    }
+    rpc GetById (GetByIdRequest) returns (WordResponse) {
+    }
+    rpc GetByWord (GetByWordRequest) returns (WordResponse) {
+    }
+    rpc List (ListRequest) returns (WordListResponse) {
+    }
+}
+
+message AddRequest {
+    string word = 1;
+    string description = 2;
+}
+
+message UpdateRequest {
+    int64 id = 1;
+    int64 vocabularyId = 2;
+    string description = 3;
+}
+
+message GetByIdRequest {
+    int64 id = 1;
+}
+
+message GetByWordRequest {
+    string word = 1;
+}
+
+message ListRequest {
+    int64 offset = 1;
+    int64 limit = 2;
+}
+
+message Response {
+    uint32 code = 1;
+    string message = 2;
+}
+
+message WordResponse {
+    uint32 code = 1;
+    Word data = 2;
+    string message = 3;
+    Extra extra = 4;
+}
+
+message WordListResponse {
+    uint32 code = 1;
+    repeated Word data = 2;
+    string message = 3;
+    Extra extra = 4;
+}
+
+message Word {
+    int64 id = 1;
+    int64 vocabularyId = 2;
+    string description = 3;
+    google.protobuf.Timestamp createdTime = 4;
+    google.protobuf.Timestamp lastModifiedTime = 5;
+}
+
+message Extra {
+    int64 totalCount = 1;
+}

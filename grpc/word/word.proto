@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package word;
+
+import "google/protobuf/timestamp.proto";
+
+service WordService {
+    rpc List (ListRequest) returns (WordListResponse) {
+    }
+}
+
+message ListRequest {
+    int64 offset = 1;
+    int64 limit = 2;
+}
+
+message WordListResponse {
+    uint32 code = 1;
+    repeated Word data = 2;
+    string message = 3;
+    Extra extra = 4;
+}
+
+message Word {
+    int64 id = 1;
+    string word = 2;
+    google.protobuf.Timestamp createdTime = 4;
+    google.protobuf.Timestamp lastModifiedTime = 5;
+}
+
+message Extra {
+    int64 totalCount = 1;
+}
