@@ -227,7 +227,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:ec0b21c65dd414b1306ee9b9f6f2e7d631029dd4c4b274a7d37f332c5fbabe28"
+  digest = "1:484c8bf6b3155a318ef96834afd9777b05a64fb6585ffadbfa12cac91ad9e618"
   name = "golang.org/x/net"
   packages = [
     "http/httpguts",
@@ -238,7 +238,7 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "2ec189313ef0a07735684caebd1ba8b8ebca456f"
+  revision = "d98b1b4438230571bd7fbc5aaa89843e92937bd3"
 
 [[projects]]
   branch = "master"
@@ -246,7 +246,7 @@
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "b397fe3ad8ed895c98fa54584f61835a88e65ff5"
+  revision = "c178f38b412c7b426e4e97be2e75d11ff7b8d4d4"
 
 [[projects]]
   digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
@@ -349,7 +349,6 @@
     "github.com/golang/protobuf/proto",
     "github.com/golang/protobuf/ptypes",
     "github.com/golang/protobuf/ptypes/timestamp",
-    "github.com/mitchellh/mapstructure",
     "github.com/sillyhatxu/consul-client",
     "github.com/sillyhatxu/environment-config",
     "github.com/sillyhatxu/logrus-client",

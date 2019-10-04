@@ -4,12 +4,17 @@ import (
 	"github.com/golang/protobuf/ptypes"
 	"github.com/sillyhatxu/word-backend/dao"
 	"github.com/sillyhatxu/word-backend/dao/params"
+	"github.com/sillyhatxu/word-backend/enums"
 	"github.com/sillyhatxu/word-backend/grpc/longman"
+	"github.com/sillyhatxu/word-backend/model"
 )
 
 func Add(request *longman.AddRequest) error {
-
-	return nil
+	status, err := enums.SwitchLongmanStatus(request.Status)
+	if err != nil {
+		return err
+	}
+	return dao.InsertLongman(&model.Longman{VocabularyId: request.VocabularyId, Description: request.Description, Status: status})
 }
 
 func Update(request *longman.UpdateRequest) error {

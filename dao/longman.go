@@ -6,11 +6,11 @@ import (
 )
 
 const insertLongmanSQL = `
-insert into longman_word (vocabulary_id, description) values (?, ?)
+INSERT INTO longman_word (vocabulary_id, description, status) VALUES(? , ? , ?)
 `
 
-func InsertLongman(input *model.Longman) error {
-	_, err := client.Insert(insertLongmanSQL, input.VocabularyId, input.Description)
+func InsertLongman(input *model.Longman) (err error) {
+	_, err = client.Insert(insertLongmanSQL, input.VocabularyId, input.Description, input.Status)
 	return err
 }
 

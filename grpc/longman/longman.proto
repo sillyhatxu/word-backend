@@ -20,12 +20,14 @@ service LongmanService {
 message AddRequest {
     int64 vocabularyId = 1;
     string description = 2;
+    Status status = 3;
 }
 
 message UpdateRequest {
     int64 id = 1;
     int64 vocabularyId = 2;
     string description = 3;
+    Status status = 4;
 }
 
 message GetByIdRequest {
@@ -64,10 +66,16 @@ message Word {
     int64 id = 1;
     int64 vocabularyId = 2;
     string description = 3;
-    google.protobuf.Timestamp createdTime = 4;
-    google.protobuf.Timestamp lastModifiedTime = 5;
+    Status status = 4;
+    google.protobuf.Timestamp createdTime = 5;
+    google.protobuf.Timestamp lastModifiedTime = 6;
 }
 
 message Extra {
     int64 totalCount = 1;
+}
+
+enum Status {
+    Error = 0;
+    Success = 1;
 }

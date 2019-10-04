@@ -31,7 +31,8 @@ func TestPage(t *testing.T) {
 	}
 }
 func TestBatchAddVocabularyRule(t *testing.T) {
-	filePath := "/Users/shikuanxu/go/src/github.com/sillyhatxu/word-backend/txt/words_alpha.txt"
+	//filePath := "/Users/shikuanxu/go/src/github.com/sillyhatxu/word-backend/txt/words_alpha.txt"
+	filePath := "/Users/cookie/go/gopath/src/github.com/sillyhatxu/word-backend/txt/words_alpha.txt"
 	file, err := os.Open(filePath)
 	if err != nil {
 		panic(err)
