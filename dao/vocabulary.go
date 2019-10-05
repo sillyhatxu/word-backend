@@ -35,9 +35,10 @@ func BatchAddVocabularyRule(inputArray []*model.Vocabulary) error {
 }
 
 const findVocabularyListSQL = `
-select * from vocabulary limit ?,?
+select * from vocabulary where id not in (select vocabulary_id from longman_word) limit ?,?
 `
 
+//select * from vocabulary limit ?,?
 func FindVocabularyList(params params.VocabularyListParams) ([]*model.Vocabulary, error) {
 	var res []*model.Vocabulary
 	err := client.FindList(findVocabularyListSQL, &res, params.Offset, params.Limit)

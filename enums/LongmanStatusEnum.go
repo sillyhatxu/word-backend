@@ -15,7 +15,7 @@ const (
 func SwitchLongmanStatus(status longman.Status) (LongmanStatus, error) {
 	if status == longman.Status_Error {
 		return LongmanStatusError, nil
-	} else if status == longman.Status_Error {
+	} else if status == longman.Status_Success {
 		return LongmanStatusSuccess, nil
 	} else {
 		return "", fmt.Errorf("unsupported status")
